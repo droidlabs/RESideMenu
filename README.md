@@ -119,6 +119,8 @@ You can customize the following properties of `RESideMenu`:
 @property (assign, readwrite, nonatomic) CGFloat contentViewScaleValue;
 @property (assign, readwrite, nonatomic) CGFloat contentViewInLandscapeOffsetCenterX;
 @property (assign, readwrite, nonatomic) CGFloat contentViewInPortraitOffsetCenterX;
+@property (assign, readwrite, nonatomic) CGFloat contentViewInLandscapeOffsetCenterY;
+@property (assign, readwrite, nonatomic) CGFloat contentViewInPortraitOffsetCenterY;
 @property (strong, readwrite, nonatomic) id parallaxMenuMinimumRelativeValue;
 @property (strong, readwrite, nonatomic) id parallaxMenuMaximumRelativeValue;
 @property (strong, readwrite, nonatomic) id parallaxContentMinimumRelativeValue;
