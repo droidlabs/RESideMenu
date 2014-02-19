@@ -84,11 +84,6 @@
         _contentViewController = contentViewController;
         _menuViewController = menuViewController;
 
-        if (!_contentViewInLandscapeOffsetCenterY)
-            _contentViewInLandscapeOffsetCenterY = self.contentViewController.view.center.y;
-
-        if (!_contentViewInPortraitOffsetCenterY)
-            _contentViewInPortraitOffsetCenterY = self.contentViewController.view.center.y;
     }
     return self;
 }
@@ -96,6 +91,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (!_contentViewInLandscapeOffsetCenterY)
+        _contentViewInLandscapeOffsetCenterY = self.contentViewController.view.center.y;
+
+    if (!_contentViewInPortraitOffsetCenterY)
+        _contentViewInPortraitOffsetCenterY = self.contentViewController.view.center.y;
 
     if (!_contentViewInLandscapeOffsetCenterX)
         _contentViewInLandscapeOffsetCenterX = CGRectGetHeight(self.view.frame) + 30.f;
@@ -321,7 +321,7 @@
 
     if (self.panFromEdge && [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] && !self.visible) {
         CGPoint point = [touch locationInView:gestureRecognizer.view];
-        if (point.x < 30) {
+        if (point.x < self.panFromEdge) {
             return YES;
         } else {
             return NO;
